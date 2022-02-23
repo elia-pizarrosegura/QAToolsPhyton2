@@ -20,7 +20,6 @@ def browser(config):
     return driver
 
 
-
 def quit_browser(webdriver):
     webdriver.quit()
 
