@@ -32,6 +32,17 @@ class Form:
             self.driver.execute_script("arguments[0].scrollIntoView();", element)
         self.driver.find_element(By.CSS_SELECTOR, find_selector("submitBtb")).click()
 
+    def verify(self):
+        verify = self.config['verify']
+        if verify == 'name':
+            self.verifyNameIsDisplayed()
+        elif verify == 'email':
+            self.verifyEmailIsDisplayed()
+        elif verify == 'address':
+            self.verifyCurrentAddressIsDisplayed()
+        else:
+            assert False, "The element to verify is unknown."
+
     def verifyNameIsDisplayed(self):
         name = self.driver.find_element(By.CSS_SELECTOR, find_selector("nameTxt"))
         if "Elia" not in name.text:

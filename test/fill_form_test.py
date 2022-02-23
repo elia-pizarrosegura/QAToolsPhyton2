@@ -20,9 +20,12 @@ def test_fill_form(driver):
     form_page.clickSubmitButton()
 
     # Then system displays above the information that user has fill previously
+    form_page.verify()
+    """
     form_page.verifyNameIsDisplayed()
     form_page.verifyEmailIsDisplayed()
     form_page.verifyCurrentAddressIsDisplayed()
+    """
 
 
 config = readData()
