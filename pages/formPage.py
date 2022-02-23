@@ -3,9 +3,9 @@ from pages.selectors import *
 
 class Form:
 
-    def __init__(self, driver):  # , config):
+    def __init__(self, driver, config):  # , config):
         self.driver = driver
-        # self.config = config
+        self.config = config
 
     def verifyElementPage(self):
         title = self.driver.find_element(By.CSS_SELECTOR, find_selector("elementTitle"))
@@ -27,10 +27,9 @@ class Form:
         self.driver.find_element(By.CSS_SELECTOR, find_selector("currentAdressInput")).send_keys("dirección")
 
     def clickSubmitButton(self):
-        # if self.config['browser'] == 'Firefox':
-        #  element = return_web_element(self.driver, "submitBtb")
-        #   self.driver.execute_script("arguments[0].scrollIntoView();", element)
-
+        if self.config['browser'] == 'Firefox':
+            element = return_web_element(self.driver, "submitBtb")
+            self.driver.execute_script("arguments[0].scrollIntoView();", element)
         self.driver.find_element(By.CSS_SELECTOR, find_selector("submitBtb")).click()
 
     def verifyNameIsDisplayed(self):

@@ -4,7 +4,7 @@ from test.conftest import browser, quit_browser, readData
 
 
 def test_fill_form(driver):
-    form_page = Form(driver) #config)
+    form_page = Form(driver, config) #config)
     home_page = Home(driver)
 
     # Given the form is displayed
