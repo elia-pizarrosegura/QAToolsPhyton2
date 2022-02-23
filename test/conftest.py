@@ -44,7 +44,7 @@ def config(scope='session'):
         config = json.load(config_file)
 
     # Assert values are acceptable
-    assert config['browser'] in ['Firefox', 'Chrome', 'Headless Chrome']
+    assert config['browser'] in ['Firefox', 'Chrome']
     assert isinstance(config['implicit_wait'], int)
     assert config['implicit_wait'] > 0
 

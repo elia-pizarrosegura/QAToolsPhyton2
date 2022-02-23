@@ -1,6 +1,7 @@
+import pytest
+from ddt import data, unpack, ddt
 from pages.formPage2 import Form
 from pages.homePage import Home
-from test.conftest import browser, quit_browser, readData, old_browser
 
 
 def test_fill_form2(browser):
