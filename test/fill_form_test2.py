@@ -1,11 +1,11 @@
-from pages.formPage import Form
+from pages.formPage2 import Form
 from pages.homePage import Home
 from test.conftest import browser, quit_browser, readData, old_browser
 
 
-def test_fill_form(driver):
-    form_page = Form(driver, config)
-    home_page = Home(driver)
+def test_fill_form2(browser):
+    form_page = Form(browser)
+    home_page = Home(browser)
 
     # Given the form is displayed
     # home_page.load()
@@ -20,15 +20,9 @@ def test_fill_form(driver):
     form_page.clickSubmitButton()
 
     # Then system displays above the information that user has fill previously
-    form_page.verify()
+    form_page.verify("name")
     """
     form_page.verifyNameIsDisplayed()
     form_page.verifyEmailIsDisplayed()
     form_page.verifyCurrentAddressIsDisplayed()
     """
-
-
-config = readData()
-driver = old_browser(config)
-test_fill_form(driver)
-quit_browser(driver)
